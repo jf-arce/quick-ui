@@ -1,7 +1,9 @@
 
 export default function page() {
   return (
-    <div>page</div>
+    <main className="bg-neutral-950">
+      asdasdasdads
+    </main>
   )
 }
 
