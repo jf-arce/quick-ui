@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+
+/* VAR */
+
+:root {
+  --D: 100px; /* size control */
+  --R: calc(var(--D) / 2);
+  --B: calc(var(--R) / 10);
+  --O: 0.8; /* opacity */
+  --a: 550ms;
+}
+
+
+.diafragma {
+  background: rgb(255, 255, 255);
+  border-radius: 100%;
+  border: 2px solid rgb(250, 250, 200);
+  box-shadow: 0 0 var(--B) 2px rgb(250, 250, 150);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: calc(-1 * var(--R));
+  margin-top: calc(-1 * var(--R));
+  width: var(--D);
+  height: var(--D);
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.diafragma:hover > .hoja {
+  box-shadow: inset 0 var(--B) 0 rgba(250, 250, 0, var(--O)),
+              inset var(--B) 0 0 rgba(250, 200, 0, var(--O)),
+              inset 0 calc(-1 * var(--B)) 0 rgba(250, 150, 0, var(--O)),
+              inset calc(-1 * var(--B)) 0 0 rgba(250, 100, 0, var(--O));
+}
+
+.hoja {
+  border-radius: 100%;
+  box-shadow: inset 0 var(--R) 0 rgba(200, 200, 0, var(--O) / 2),
+              inset var(--R) 0 0 rgba(150, 150, 0, var(--O) / 2),
+              inset 0 calc(-1 * var(--R)) 0 rgba(200, 100, 0, var(--O) / 2),
+              inset calc(-1 * var(--R)) 0 0 rgba(250, 250, 0, var(--O) / 2);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: box-shadow var(--a) ease-in-out;
+}
+
+.giro {
+  transform: rotateZ(45deg);
+}
+
+.text {
+  color: rgb(200, 200, 200);
+  position: absolute;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: calc(var(--R) / 3);
+  line-height: var(--D);
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
