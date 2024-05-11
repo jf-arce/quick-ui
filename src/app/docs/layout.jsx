@@ -2,7 +2,7 @@
 export default function DocLayout({children}) {
   return (
     <>
-        <div className="mt-[92px] grid grid-cols-[300px,1fr] gap-14 px-[76px]">          
+        <div className="grid grid-cols-[300px,1fr] gap-14 px-[76px]">          
             <aside className="bg-neutral-950">
                 <div>
                     <p>All components</p>

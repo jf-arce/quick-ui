@@ -5,7 +5,7 @@ import '@/css/CardHome.css';
 
 export default function Home() {
   return (
-    <main className="mt-[92px] ">
+    <main>
       <Hero />
       <section className="py-12 md:py-24">
         <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 m-auto">
@@ -13,7 +13,7 @@ export default function Home() {
             title="Hover Effects"
             description="Explore our collection of stunning hover effects."
           >
-            <div class="group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500
+            <div className="group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500
               hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 
              before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 
              hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4  

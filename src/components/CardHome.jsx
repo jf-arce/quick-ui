@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export const CardHome = ({title,description,children}) => {
   return (
-    <div className="bg-white dark:bg-neutral-950 rounded-lg shadow-lg overflow-hidden group">
+    <div className="bg-neutral-950 rounded-lg shadow-lg overflow-hidden group">
       <Link
-        className="h-48 bg-gray-100 dark:bg-neutral-900 flex items-center justify-center"
+        className="h-48 bg-neutral-900 flex items-center justify-center"
         href="#"
       >
         {children}
