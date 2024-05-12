@@ -1,9 +1,5 @@
-
 export default function page() {
   return (
-    <div>
-      Introduction
-    </div>
+    <div>page</div>
   )
 }
-

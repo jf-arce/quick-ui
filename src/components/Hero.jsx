@@ -19,12 +19,12 @@ export const Hero = () => {
           </Link>
         </div>
       </div>
-      <div class="lines">
+      <div className="lines">
         
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </div>
       
     </div>

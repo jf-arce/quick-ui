@@ -14,14 +14,14 @@ export default function NavBar() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-neutral-950" height="96px" maxWidth="2xl" shouldHideOnScroll>
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-neutral-950" height="80px" maxWidth="xl" shouldHideOnScroll>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-            <Link href="/" className="font-bold text-inherit">
+            <Link href="/" className="font-bold text-inherit text-xl">
                 Quick
             </Link>
         </NavbarBrand>
@@ -30,9 +30,16 @@ export default function NavBar() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link color="foreground" href="/docs" className="text-white">
+            Docs
+          </Link>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Link color="foreground" href="/docs" className="text-white">
             Components
           </Link>
         </NavbarItem>
+        
         {/* <NavbarItem isActive>
           <Link href="#" aria-current="page">
             Demos

@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  
+:root, [data-theme]{
+  background-color: transparent;
 }
 
 body{
@@ -15,28 +12,38 @@ body{
   color: CanvasText;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/*Estilos para los bloques de código*/
+pre{
+  max-width: 900px;
+  position: relative;
+  overflow-x: auto;
+  padding: 1rem 0;
+  @apply rounded-md text-sm;
+}
+ 
+pre [data-line] {
+  padding: 0 1rem;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+code {
+  counter-reset: line;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
-
-
+ 
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+ 
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
+}
+ 
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
+}
