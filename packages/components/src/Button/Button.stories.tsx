@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryObj } from "@quick-ui/storybook/node_modules/@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
 import { btnTypesEnum, ButtonProps } from "./Button.types";
 
