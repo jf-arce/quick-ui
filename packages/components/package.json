@@ -1,0 +1,34 @@
+{
+  "name": "@quick-ui/components",
+  "version": "0.0.13",
+  "private": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@quick-ui/typescript-config": "*",
+    "@turbo/gen": "^1.12.4",
+    "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "tsup": "^8.2.3",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

@@ -1,0 +1,101 @@
+/* Navbar.module.css */
+
+/************* MENU RESPONSIVE MOBILE FIRST *************/
+.header {
+    background-color: rgba(0, 0, 0);
+    color: #fff;
+    min-height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/** LOGO DE LA PAGINA **/
+.header__icon {
+    margin-left: 50px;
+}
+.icon__item {
+    filter: invert(0); /* Invierte el color del icono */
+    font-weight: bold;
+}
+.icon__img {
+    height: 40px;
+    width: 40px;
+}
+
+/** Menu de navegacion desplegable (Menu Hamburguesa) **/
+.header__nav {
+    position: absolute;
+    top: 12vh;
+    width: 100%;
+    height: calc(100vh - 12vh);
+    background-color: rgba(32, 32, 32, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 1s;
+}
+.nav__list {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.list__item {
+    padding: 30px;
+    font-size: 1.5em;
+}
+.item__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+/** Menu hamburguesa (Animacion) **/
+.toggleMenu__checkbox:checked + .header__nav {
+    transform: translateX(0);
+    transition: transform 1s;
+}
+.toggleMenu__checkbox{
+    display: block;
+}
+.toggleMenu {
+    display: block;
+    margin-right: 50px;
+}
+.toggle-icon {
+    filter: invert(1); /* Invierte el color del icono */
+    height: 35px;
+    width: 35px;
+}
+
+/**** Media Querie para escritorio ****/
+@media (width >= 1240px) {
+    .header__nav {
+        position: relative;
+        top: 0vh;
+        height: 0;
+        justify-content: flex-end;
+        transform: translateX(0);
+    }
+    .nav__list {
+        display: flex;
+        flex-direction: row;
+        margin-right: 50px;
+    }
+    .list__item {
+        padding: 0px 20px;
+        font-size: 1em;
+    }
+    
+    .toggleMenu {
+        display: none;
+    }
+
+    .toggleMenu__checkbox{
+        display: none;
+    }
+}

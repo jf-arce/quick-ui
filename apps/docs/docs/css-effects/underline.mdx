@@ -1,0 +1,54 @@
+---
+title: Underline
+custom_edit_url: null
+---
+
+# Underline
+
+Subraya palabras o enlaces al pasar el cursor sobre ellos, destacando la interactividad del contenido.
+
+import { HoverUnderline } from "@site/src/components/EffectsCss/HoverUnderline/HoverUnderline"
+
+<HoverUnderline/>
+
+:::important Importante
+    Se debe colocar la clase 'underline' al texto que querramos el efecto 
+:::
+
+## HTML
+
+```html title="html"
+<ul>
+  <li class="underline"></li>
+  <li class="underline"></li>
+  <li class="underline"></li>
+</ul>
+```
+
+## CSS
+
+```css title="css"
+.underline{
+    display: inline-block;
+    position: relative;
+}
+.underline::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: rgb(255, 105, 105);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.6s ease-out;
+}
+.underline:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+```
+:::note Nota
+    Para modificar la posicion del subrayado en el eje "y" cambiar la propiedad `bottom` de la clase `.underline::after`
+:::

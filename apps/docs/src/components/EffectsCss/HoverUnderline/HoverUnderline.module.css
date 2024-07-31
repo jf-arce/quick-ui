@@ -1,0 +1,26 @@
+/*** HOVER UNDERLINE ***/
+
+/* Se debe colocar la clase 'underline' al texto que querramos el efecto*/
+.underline{
+    display: inline-block;
+    position: relative;
+    margin: 0 !important;
+    cursor: pointer;
+    font-weight: 600;
+}
+.underline::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: rgb(170, 105, 255);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.6s ease-out;
+}
+.underline:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

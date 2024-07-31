@@ -1,0 +1,13 @@
+.sibling{
+  transition: transform 200ms, filter 200ms;
+  margin: 20px 0px 50px 0px;
+}
+
+.sibling:hover{
+  transform: scale(1.1);
+}
+
+.container-siblings:has(.sibling:hover) > .sibling:not(:hover){
+  filter: brightness(0.5) saturate(0.5) contrast(0.5) blur(1px);
+  transform: scale(0.9);
+} 

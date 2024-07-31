@@ -1,0 +1,144 @@
+/*Hero Banner*/
+
+.heroBanner {
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+  
+@media screen and (max-width: 996px) {
+    .heroBanner {
+        padding: 2rem;
+    }
+}
+
+
+/* Button Hero */
+.buttonHero {
+    --color: rgb(27, 0, 52);
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgb(78, 0, 151);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: rgb(217, 217, 217);
+}
+   
+.buttonHero:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+   
+.buttonHero:hover {
+    color: #fff;
+}
+   
+.buttonHero:before {
+    top: 100%;
+    left: 100%;
+    transition: all .5s;
+}
+   
+.buttonHero:hover:before {
+    top: -30px;
+    left: -30px;
+}
+   
+.buttonHero:active:before {
+    background: rgb(87, 0, 169);;
+    transition: background 0s;
+}
+
+/* Lines effects */
+
+
+@keyframes drop {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.lines {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+}
+
+.line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    overflow: hidden;
+}
+
+.line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    animation: drop 7s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line:nth-child(1) {
+    margin-left: -39%;
+}
+
+.line:nth-child(1)::after {
+    animation-delay: 2s;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #9a1fdc 100%);
+}
+
+.line:nth-child(2) {
+    margin-left: -25%;
+}
+
+.line:nth-child(2)::after {
+    animation-delay: 2s;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #c300a3 100%);
+}
+
+.line:nth-child(3) {
+    margin-left: 25%;
+}
+
+.line:nth-child(3)::after {
+    animation-delay: 2s;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #9a1fdc 100%);
+}
+
+.line:nth-child(4) {
+    margin-left: 39%;
+}
+
+.line:nth-child(4)::after {
+    animation-delay: 2s;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #c300a3 100%);
+}

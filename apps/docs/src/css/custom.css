@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #b358fe;
+  --ifm-color-primary-dark: #a436fe;
+  --ifm-color-primary-darker: #9c25fe;
+  --ifm-color-primary-darkest: #8301ee;
+  --ifm-color-primary-light: #c27afe;
+  --ifm-color-primary-lighter: #ca8bfe;
+  --ifm-color-primary-lightest: #e1beff;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/* Overriding root Infima variables */
+[data-theme="dark"] {
+  background-color: #121212;
+}
+/* Styling one class specially in dark mode */
+[data-theme="dark"] .purple-text {
+  color: plum;
+}
+
+.navbar {
+  background-color: #0a0a0a;
+}
+
+.theme-doc-markdown {
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: #0a0a0a;
+  padding: 15px;
+  color: #b7b7b7;
+  font-size: 15px;
+}
+
+/* .col .col--3{
+  --ifm-col-width: calc(2 / 12 * 100%) !important;
+}
+
+.row{
+  justify-content: center !important;
+}
+ */

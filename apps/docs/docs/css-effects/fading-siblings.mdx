@@ -1,0 +1,43 @@
+---
+title: Fading Siblings
+custom_edit_url: null
+description: Permite que al pasar el mouse por encima de un elemento, los demás elementos hermanos se desenfoquen y se reduzcan de tamaño.
+---
+
+import { FadingSiblings } from '@site/src/components/EffectsCSS/FadingSiblings/FadingSiblings'
+
+# Fading Siblings
+
+Permite que al pasar el mouse por encima de un elemento, los demás elementos hermanos se desenfoquen y se reduzcan de tamaño.
+
+
+<FadingSiblings/>
+
+:::important Importante
+  Se debe colocar la clase ```"container-siblings"``` al contenedor padre y la clase ```"sibling"``` a cada div hijo
+:::
+
+## HTML
+
+```html title="html"
+<div class="container-siblings">
+  <div class="sibling"></div>
+  <div class="sibling"></div>
+  <div class="sibling"></div>
+</div>
+```
+
+## CSS
+
+```css title="css"
+.sibling{
+  transition: transform 200ms, filter 200ms;
+}
+.sibling:hover{
+  transform: scale(1.1);
+}
+.container-siblings:has(.sibling:hover) > .sibling:not(:hover){
+  filter: brightness(0.5) saturate(0.5) contrast(0.5) blur(1px);
+  transform: scale(0.9);
+} 
+```
