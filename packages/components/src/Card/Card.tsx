@@ -1,7 +1,8 @@
 import React from "react";
 
 const Card = () => {
-  return <div className="">Card</div>;
+  return;
+  <div></div>;
 };
 
 export default Card;

@@ -17,6 +17,8 @@ export interface ButtonProps {
   disabled?: boolean; // Whether the button is disabled
   type?: "button" | "submit" | "reset"; // Button type
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  loading?: boolean; // Whether to show loading spinner
+  spinner?: React.ReactNode; // Custom loading spinner
 }
 
 export type btnType = "primary" | "secondary" | "tertiary";

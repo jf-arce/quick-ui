@@ -9,6 +9,7 @@ import { btnTypesEnum, ButtonProps, ButtonRadius } from "./Button.types";
 import { ButtonSize } from "./Button.constants";
 import { handleRippleEffect } from "./rippleEffect";
 import { darkenColor } from "./darkenColor";
+import Spinner from "../Spinner";
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -28,6 +29,8 @@ const Button: React.FC<ButtonProps> = ({
   style,
   disabled = false,
   type = "button",
+  loading = false,
+  spinner = <Spinner bgColor="transparent" spinnerColor="white" />,
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -61,7 +64,7 @@ const Button: React.FC<ButtonProps> = ({
   }, [colorBg, hoverColor, hoverOpacity, colorText]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (ripple) {
+    if (ripple && loading === false) {
       handleRippleEffect(e, buttonRef, btnType, colorBg); // Handle ripple effect
     }
     if (onClick) {
@@ -72,19 +75,19 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       ref={buttonRef}
-      className={`${className} inline-flex items-center justify-center font-medium relative overflow-hidden box-border transition-all hover:!bg-opacity-50 disabled:cursor-not-allowed 
+      className={`${className} ${loading && "opacity-60"} inline-flex items-center gap-2 justify-center font-medium relative overflow-hidden box-border transition-all hover:!bg-opacity-50 disabled:cursor-not-allowed 
 disabled:bg-neutral-200 disabled:opacity-60 disabled:border-none disabled:text-neutral-100 disabled:hover:!bg-neutral-200  disabled:hover:!text-neutral-100 
-      ${pulse && disabled === false ? "active:focus:scale-[0.97] duration-150" : ""}
+      ${pulse && disabled === false && loading === false ? "active:focus:scale-[0.97] duration-150" : ""}
       ${btnType === btnTypesEnum.PRIMARY ? `border-none bg-[var(--bg-color)] text-[var(--text-color)] hover:bg-[var(--hover-color)]` : ""}
       ${btnType === btnTypesEnum.SECONDARY ? `border-[1px] border-solid border-[var(--bg-color)] bg-transparent text-[var(--bg-color)] hover:bg-[var(--hover-color)] hover:text-[var(--text-color)]` : ""}
       ${btnType === btnTypesEnum.TERTIARY ? `border-[1px] border-solid border-[var(--bg-color)] bg-transparent text-[var(--bg-color)]` : ""}
-      ${icon ? "!py-[10px] !px-[12px] gap-2" : ""}`}
+      ${icon ? "!py-[10px] !px-[12px]" : ""}`}
       style={styles}
       onClick={handleClick}
       disabled={disabled}
       type={type}
     >
-      {icon && icon} {children}
+      {loading && spinner} {icon && icon} {children}
     </button>
   );
 };

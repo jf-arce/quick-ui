@@ -23,6 +23,7 @@ export default {
     hoverColor: true,
     hoverOpacity: 15,
     icon: null,
+    loading: false,
     className: "",
     style: {},
     disabled: false,
@@ -202,5 +203,14 @@ export const IconWithText: StoryObj<ButtonProps> = {
         <path d="M6 5l14 1l-1 7h-13" />
       </svg>
     ),
+  },
+};
+
+export const Loading: StoryObj<ButtonProps> = {
+  ...Template,
+  args: {
+    ...Template.args,
+    children: "Loading...",
+    loading: true,
   },
 };
