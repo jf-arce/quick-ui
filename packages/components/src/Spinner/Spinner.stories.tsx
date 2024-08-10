@@ -10,8 +10,8 @@ export default {
     layout: "centered",
   },
   args: {
-    bgColor: "#a551e4",
-    spinnerColor: "#ffffff",
+    bgColor: "transparent",
+    spinnerColor: "#a551e4",
     className: "",
   },
 } satisfies Meta<typeof Spinner>;
@@ -24,5 +24,6 @@ export const Primary: StoryObj<SpinnerProps> = {
   ...Template,
   args: {
     ...Template.args,
+    className: "h-12",
   },
 };

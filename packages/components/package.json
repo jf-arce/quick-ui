@@ -13,6 +13,9 @@
     "lint": "eslint . --max-warnings 0",
     "build": "tsup"
   },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
   "devDependencies": {
     "@quick-ui/typescript-config": "*",
     "@turbo/gen": "^1.12.4",

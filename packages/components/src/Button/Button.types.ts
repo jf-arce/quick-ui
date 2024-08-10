@@ -10,7 +10,7 @@ export interface ButtonProps {
   ripple?: boolean; // Whether to enable ripple effect on click
   hoverColor?: string | boolean; // Custom hover color (optional)
   hoverOpacity?: number; // Amount to darken hover color (optional)
-  btnType?: btnType; // Type of button (primary, secondary or tertiary)
+  variant?: VariantType; // variant of button (primary, secondary or tertiary)
   icon?: React.ReactNode; // Icon to display in the button
   className?: string; // Custom class name for the button
   style?: React.CSSProperties; // Custom styles for the button
@@ -21,7 +21,7 @@ export interface ButtonProps {
   spinner?: React.ReactNode; // Custom loading spinner
 }
 
-export type btnType = "primary" | "secondary" | "tertiary";
+export type VariantType = "primary" | "secondary" | "tertiary";
 
 export type RadiusType = "sm" | "md" | "lg" | "xl" | "full";
 
@@ -37,7 +37,7 @@ export enum ButtonRadius {
   "full" = "100px",
 }
 
-export enum btnTypesEnum {
+export enum VariantEnum {
   "PRIMARY" = "primary",
   "SECONDARY" = "secondary",
   "TERTIARY" = "tertiary",

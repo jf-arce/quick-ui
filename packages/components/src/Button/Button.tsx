@@ -5,11 +5,12 @@
  * text color, hover effects, ripple effect, and more.
  */
 import React, { useEffect, useRef } from "react";
-import { btnTypesEnum, ButtonProps, ButtonRadius } from "./Button.types";
-import { ButtonSize } from "./Button.constants";
+import { VariantEnum, ButtonProps, ButtonRadius } from "./Button.types";
+import { ButtonSize, twStyles } from "./Button.constants";
 import { handleRippleEffect } from "./rippleEffect";
 import { darkenColor } from "./darkenColor";
 import Spinner from "../Spinner";
+import clsx from "clsx";
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -22,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   ripple = true,
   hoverColor = true,
   hoverOpacity = 15,
-  btnType = btnTypesEnum.PRIMARY,
+  variant = VariantEnum.PRIMARY,
   icon = null,
   onClick,
   className,
@@ -65,7 +66,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (ripple && loading === false) {
-      handleRippleEffect(e, buttonRef, btnType, colorBg); // Handle ripple effect
+      handleRippleEffect(e, buttonRef, variant, colorBg); // Handle ripple effect
     }
     if (onClick) {
       onClick(e);
@@ -75,13 +76,19 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       ref={buttonRef}
-      className={`${className} ${loading && "opacity-60"} inline-flex items-center gap-2 justify-center font-medium relative overflow-hidden box-border transition-all hover:!bg-opacity-50 disabled:cursor-not-allowed 
-disabled:bg-neutral-200 disabled:opacity-60 disabled:border-none disabled:text-neutral-100 disabled:hover:!bg-neutral-200  disabled:hover:!text-neutral-100 
-      ${pulse && disabled === false && loading === false ? "active:focus:scale-[0.97] duration-150" : ""}
-      ${btnType === btnTypesEnum.PRIMARY ? `border-none bg-[var(--bg-color)] text-[var(--text-color)] hover:bg-[var(--hover-color)]` : ""}
-      ${btnType === btnTypesEnum.SECONDARY ? `border-[1px] border-solid border-[var(--bg-color)] bg-transparent text-[var(--bg-color)] hover:bg-[var(--hover-color)] hover:text-[var(--text-color)]` : ""}
-      ${btnType === btnTypesEnum.TERTIARY ? `border-[1px] border-solid border-[var(--bg-color)] bg-transparent text-[var(--bg-color)]` : ""}
-      ${icon ? "!py-[10px] !px-[12px]" : ""}`}
+      className={clsx(
+        {
+          //add twStyles if the condition on the right is true
+          [twStyles.LOADING]: loading,
+          [twStyles.ICON]: icon,
+          [twStyles.PULSE_ANIMATION]: pulse && !disabled && !loading,
+          [twStyles.PRIMARY]: variant === VariantEnum.PRIMARY,
+          [twStyles.SECONDARY]: variant === VariantEnum.SECONDARY,
+          [twStyles.TERTIARY]: variant === VariantEnum.TERTIARY,
+        },
+        twStyles.DEFAULT,
+        className,
+      )}
       style={styles}
       onClick={handleClick}
       disabled={disabled}
@@ -92,6 +99,6 @@ disabled:bg-neutral-200 disabled:opacity-60 disabled:border-none disabled:text-n
   );
 };
 
-Button.displayName = "QuickUI.Button"; //Esto es para que el componente Button se muestre en el storybook
+Button.displayName = "QuickUI.Button";
 
 export default Button;

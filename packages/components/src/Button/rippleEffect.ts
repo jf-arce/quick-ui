@@ -2,12 +2,12 @@
  * Function to create the ripple effect on button click.
  *
  */
-import { btnType, btnTypesEnum, ColorType } from "./Button.types";
+import { VariantType, VariantEnum, ColorType } from "./Button.types";
 
 export const handleRippleEffect = (
   e: React.MouseEvent,
   buttonRef: React.RefObject<HTMLButtonElement>,
-  btnType: btnType,
+  variant: VariantType,
   colorBg: ColorType | false,
 ) => {
   const button = buttonRef.current;
@@ -17,7 +17,7 @@ export const handleRippleEffect = (
   const ripple = document.createElement("span");
   ripple.className = "animate-ripple absolute rounded-[50%] scale-0 pointer-events-none opacity-75";
   ripple.style.backgroundColor =
-    btnType === btnTypesEnum.TERTIARY
+    variant === VariantEnum.TERTIARY
       ? colorBg
         ? colorBg
         : "rgba(255, 255, 255, 0.3)"

@@ -10,7 +10,8 @@
     "build:storybook": "turbo build:storybook",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "create-component": "ts-node scripts/create-component.ts"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.18.0",

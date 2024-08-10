@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
 if (process.argv.length !== 3) {
   console.error("Uso: ts-node scripts/create-component.ts <NombreDelComponente>");
@@ -7,12 +7,7 @@ if (process.argv.length !== 3) {
 }
 
 const componentName = process.argv[2];
-const componentDir = path.join(
-  __dirname,
-  "..",
-  "packages/quick-ui-components/src/components",
-  componentName,
-);
+const componentDir = path.join(__dirname, "..", "packages/components/src", componentName);
 
 // Crea la carpeta del componente si no existe
 if (!fs.existsSync(componentDir)) {

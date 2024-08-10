@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
-import { btnTypesEnum, ButtonProps } from "./Button.types";
+import { VariantEnum, ButtonProps } from "./Button.types";
 
 export default {
   title: "Components/Button",
@@ -12,7 +12,7 @@ export default {
   },
   args: {
     children: "",
-    btnType: btnTypesEnum.PRIMARY,
+    variant: VariantEnum.PRIMARY,
     colorBg: "#a551e4",
     size: "md",
     radius: "lg",
@@ -74,10 +74,10 @@ export default {
         defaultValue: { summary: "#ffffff" },
       },
     },
-    btnType: {
+    variant: {
       description: "Type of button (primary, secondary or tertiary)",
       table: {
-        type: { summary: "btnType" },
+        type: { summary: "string" },
         defaultValue: { summary: "primary" },
       },
     },
@@ -129,7 +129,7 @@ export const Primary: StoryObj<ButtonProps> = {
   args: {
     ...Template.args,
     children: "Primary Button",
-    btnType: btnTypesEnum.PRIMARY,
+    variant: VariantEnum.PRIMARY,
   },
 };
 
@@ -138,7 +138,7 @@ export const Secundary: StoryObj<ButtonProps> = {
   args: {
     ...Template.args,
     children: "Secundary Button",
-    btnType: btnTypesEnum.SECONDARY,
+    variant: VariantEnum.SECONDARY,
   },
 };
 
@@ -147,7 +147,7 @@ export const Tertiary: StoryObj<ButtonProps> = {
   args: {
     ...Template.args,
     children: "Tertiary Button",
-    btnType: btnTypesEnum.TERTIARY,
+    variant: VariantEnum.TERTIARY,
   },
 };
 

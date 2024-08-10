@@ -1,8 +1,11 @@
-import React from "react";
 
-const Card = () => {
-  return;
-  <div></div>;
+
+const Card: React.FC = () => {
+  return (
+    <div>
+      Card component
+    </div>
+  );
 };
 
 export default Card;
