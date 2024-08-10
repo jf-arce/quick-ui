@@ -2,13 +2,15 @@
  * Function to create the ripple effect on button click.
  *
  */
-import { VariantType, VariantEnum, ColorType } from "./Button.types";
+import { VariantType, VariantEnum } from "./Button.types";
+import { colorToRgba } from "../../utils/colors";
 
 export const handleRippleEffect = (
   e: React.MouseEvent,
   buttonRef: React.RefObject<HTMLButtonElement>,
   variant: VariantType,
-  colorBg: ColorType | false,
+  colorBg: string | false,
+  colorText: string,
 ) => {
   const button = buttonRef.current;
   if (!button) return;
@@ -20,8 +22,8 @@ export const handleRippleEffect = (
     variant === VariantEnum.TERTIARY
       ? colorBg
         ? colorBg
-        : "rgba(255, 255, 255, 0.3)"
-      : "rgba(255, 255, 255, 0.3)"; // Color of the ripple effect
+        : colorToRgba(colorText, 0.3)
+      : colorToRgba(colorText, 0.3); // Color of the ripple effect
 
   // Calculate the position of the ripple effect
   const rect = button.getBoundingClientRect(); // Get the button dimensions

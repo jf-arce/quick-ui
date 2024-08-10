@@ -8,9 +8,9 @@ import React, { useEffect, useRef } from "react";
 import { VariantEnum, ButtonProps, ButtonRadius } from "./Button.types";
 import { ButtonSize, twStyles } from "./Button.constants";
 import { handleRippleEffect } from "./rippleEffect";
-import { darkenColor } from "./darkenColor";
 import Spinner from "../Spinner";
 import clsx from "clsx";
+import { darkenColor } from "../../utils/colors";
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   type = "button",
   loading = false,
-  spinner = <Spinner bgColor="transparent" spinnerColor="white" />,
+  spinner = <Spinner bgColor="transparent" spinnerColor={colorText} />,
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -39,7 +39,6 @@ const Button: React.FC<ButtonProps> = ({
     padding: ButtonSize[size].paddingY + " " + ButtonSize[size].paddingX,
     fontSize: ButtonSize[size].fontSize,
     borderRadius: ButtonRadius[radius],
-    cursor: pointer ? "pointer" : "",
     ...style,
   };
 
@@ -49,7 +48,7 @@ const Button: React.FC<ButtonProps> = ({
       buttonRef.current.style.setProperty("--bg-color", colorBg || "transparent");
       buttonRef.current.style.setProperty("--text-color", colorText);
       // Set hover color or auto darken background color
-      if (hoverColor) {
+      if (hoverColor && loading === false && disabled === false) {
         buttonRef.current.style.setProperty(
           "--hover-color",
           typeof hoverColor === "string"
@@ -62,11 +61,11 @@ const Button: React.FC<ButtonProps> = ({
         buttonRef.current.style.setProperty("--hover-color", colorBg ? colorBg : "");
       }
     }
-  }, [colorBg, hoverColor, hoverOpacity, colorText]);
+  }, [colorBg, hoverColor, hoverOpacity, colorText, loading, disabled]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (ripple && loading === false) {
-      handleRippleEffect(e, buttonRef, variant, colorBg); // Handle ripple effect
+      handleRippleEffect(e, buttonRef, variant, colorBg, colorText); // Handle ripple effect
     }
     if (onClick) {
       onClick(e);
@@ -79,6 +78,7 @@ const Button: React.FC<ButtonProps> = ({
       className={clsx(
         {
           //add twStyles if the condition on the right is true
+          "cursor-pointer": pointer,
           [twStyles.LOADING]: loading,
           [twStyles.ICON]: icon,
           [twStyles.PULSE_ANIMATION]: pulse && !disabled && !loading,

@@ -1,7 +1,7 @@
 /* Props for the Button component.*/
 export interface ButtonProps {
   children?: string; // Text content of the button
-  colorBg?: ColorType | false; // Background color of the button
+  colorBg?: string | false; // Background color of the button
   size?: ButtonSizeType; // Size of the button (sm, md, lg, xl, 2xl)
   radius?: RadiusType; // Border radius of the button
   pointer?: boolean; // Whether the button cursor should be pointer
@@ -27,13 +27,11 @@ export type RadiusType = "sm" | "md" | "lg" | "xl" | "full";
 
 export type ButtonSizeType = "sm" | "md" | "lg" | "xl" | "2xl";
 
-export type ColorType = `#${string}`; // Format for color values
-
 export enum ButtonRadius {
   "sm" = "2px",
   "md" = "4px",
   "lg" = "6px",
-  "xl" = "10px",
+  "xl" = "12px",
   "full" = "100px",
 }
 

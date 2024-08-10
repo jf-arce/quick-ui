@@ -29,7 +29,7 @@ export const ButtonSize = {
 
 export const twStyles = {
   DEFAULT:
-    "inline-flex items-center gap-2 justify-center font-medium relative overflow-hidden box-border transition-all hover:!bg-opacity-50 disabled:cursor-not-allowed disabled:bg-neutral-200 disabled:opacity-60 disabled:border-none disabled:text-neutral-100 disabled:hover:!bg-neutral-200 disabled:hover:!text-neutral-100",
+    "inline-flex items-center gap-2 justify-center font-medium relative overflow-hidden box-border transition-all hover:!bg-opacity-50 disabled:opacity-50 disabled:pointer-events-none disabled:cursor-default",
   PRIMARY:
     "border-none bg-[var(--bg-color)] text-[var(--text-color)] hover:bg-[var(--hover-color)]",
   SECONDARY:
@@ -38,5 +38,5 @@ export const twStyles = {
     "border-[1px] border-solid border-[var(--bg-color)] bg-transparent text-[var(--bg-color)]",
   PULSE_ANIMATION: "active:focus:scale-[0.97] duration-150",
   ICON: "!py-[10px] !px-[12px]",
-  LOADING: "opacity-60",
+  LOADING: "opacity-60 cursor-default pointer-events-none",
 };

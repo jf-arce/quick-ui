@@ -24,6 +24,6 @@ export const Primary: StoryObj<SpinnerProps> = {
   ...Template,
   args: {
     ...Template.args,
-    className: "h-12",
+    className: "h-10",
   },
 };

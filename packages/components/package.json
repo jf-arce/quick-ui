@@ -14,7 +14,8 @@
     "build": "tsup"
   },
   "dependencies": {
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "@quick-ui/typescript-config": "*",
