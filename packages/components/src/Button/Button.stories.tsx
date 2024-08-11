@@ -28,6 +28,7 @@ export default {
     style: {},
     disabled: false,
     type: "button",
+    iconPosition: "left",
   },
   argTypes: {
     colorBg: {

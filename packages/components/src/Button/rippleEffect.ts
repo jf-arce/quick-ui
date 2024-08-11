@@ -21,9 +21,9 @@ export const handleRippleEffect = (
   ripple.style.backgroundColor =
     variant === VariantEnum.TERTIARY
       ? colorBg
-        ? colorBg
-        : colorToRgba(colorText, 0.3)
-      : colorToRgba(colorText, 0.3); // Color of the ripple effect
+        ? colorToRgba(colorBg, 0.2)
+        : colorToRgba(colorText, 0.2)
+      : colorToRgba(colorText, 0.3);
 
   // Calculate the position of the ripple effect
   const rect = button.getBoundingClientRect(); // Get the button dimensions

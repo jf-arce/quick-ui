@@ -33,7 +33,7 @@ export const twStyles = {
   PRIMARY:
     "border-none bg-[var(--bg-color)] text-[var(--text-color)] hover:bg-[var(--hover-color)]",
   SECONDARY:
-    "border-[1px] border-solid border-[var(--bg-color)] bg-transparent text-[var(--bg-color)] hover:bg-[var(--hover-color)] hover:text-[var(--text-color)]",
+    "border-[1px] border-solid border-[var(--bg-color)] bg-transparent text-[var(--bg-color)] hover:bg-[var(--bg-color)] hover:text-[var(--text-color)]",
   TERTIARY:
     "border-[1px] border-solid border-[var(--bg-color)] bg-transparent text-[var(--bg-color)]",
   PULSE_ANIMATION: "active:focus:scale-[0.97] duration-150",

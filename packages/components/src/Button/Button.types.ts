@@ -19,6 +19,7 @@ export interface ButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   loading?: boolean; // Whether to show loading spinner
   spinner?: React.ReactNode; // Custom loading spinner
+  iconPosition?: "left" | "right"; // Icon position in the button
 }
 
 export type VariantType = "primary" | "secondary" | "tertiary";

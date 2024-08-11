@@ -32,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   type = "button",
   loading = false,
   spinner = <Spinner bgColor="transparent" spinnerColor={colorText} />,
+  iconPosition = "left",
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -94,7 +95,8 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       type={type}
     >
-      {loading && spinner} {icon && icon} {children}
+      {loading && spinner} {iconPosition === "left" && icon} {children}{" "}
+      {iconPosition === "right" && icon}
     </button>
   );
 };

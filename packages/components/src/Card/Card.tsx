@@ -1,40 +1,31 @@
-import React from "react";
 import { CardProps } from "./Card.types";
+import Button from "@quick-ui/components/src/Button";
+import { CardContent } from "./CardContent";
+import { CardHeader } from "./CardHeader";
 
-const Card: React.FC<CardProps> = ({
-  title,
-  subtitle,
-  image,
-  content,
-  footer,
-  className = "",
-  variant = "default",
-  imagePosition = "top",
-}) => {
+const Card: React.FC<CardProps> = ({ title, image, description }) => {
   return (
-    <div
-      className={`bg-white border border-gray-200 rounded-lg shadow-md ${variant === "outlined" ? "border-gray-300" : ""} ${variant === "elevated" ? "shadow-xl" : ""} ${className}`}
-    >
-      {image && imagePosition === "top" && (
-        <img src={image} alt="Card image" className="w-full h-48 object-cover rounded-t-lg" />
-      )}
-      <div className="p-6">
-        {title && <h2 className="text-2xl font-bold mb-2">{title}</h2>}
-        {subtitle && <h3 className="text-lg text-gray-600 mb-4">{subtitle}</h3>}
-        <div className="mb-4">{content}</div>
-        {footer && <div className="mt-4 border-t border-gray-200 pt-4">{footer}</div>}
-      </div>
-      {image && imagePosition === "left" && (
-        <div className="flex">
-          <img src={image} alt="Card image" className="w-1/3 h-auto object-cover rounded-l-lg" />
-          <div className="p-6 flex-1">
-            {title && <h2 className="text-2xl font-bold mb-2">{title}</h2>}
-            {subtitle && <h3 className="text-lg text-gray-600 mb-4">{subtitle}</h3>}
-            <div className="mb-4">{content}</div>
-            {footer && <div className="mt-4 border-t border-gray-200 pt-4">{footer}</div>}
-          </div>
+    <div className="w-full max-w-sm rounded-lg overflow-hidden shadow-lg transition-all hover:shadow-xl group">
+      <CardHeader className="h-52">
+        <img
+          src={image}
+          alt=""
+          loading="lazy"
+          className={`object-cover w-full h-full rounded-t-lg group-hover:scale-105 transition-transform duration-200 ease-in-out`}
+        />
+      </CardHeader>
+      <CardContent>
+        <h3 className="text-2xl font-bold">{title}</h3>
+        <p className="text-sm mt-3">{description}</p>
+        <div className="flex gap-4 border-black border-t-2 mt-5">
+          <Button variant="primary" size={"sm"} colorBg="black">
+            Add to cart
+          </Button>
+          <Button variant="primary" size={"sm"}>
+            Buy now
+          </Button>
         </div>
-      )}
+      </CardContent>
     </div>
   );
 };

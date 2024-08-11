@@ -11,13 +11,9 @@ export default {
   },
   args: {
     title: "Card title",
-    subtitle: "Card subtitle",
-    content: "Card content",
-    footer: "Card footer",
+    description: "Altos fideos se mando mi vieja",
     className: "",
-    variant: "default",
-    imagePosition: "top",
-    image: "https://i.pinimg.com/originals/a5/2b/33/a52b331c426437404ef1e7dc71d3f944.jpg",
+    image: "https://th.bing.com/th/id/OIP.-iKT7rZf1Fl-tPBTEEr03gHaEb?rs=1&pid=ImgDetMain",
   },
 } satisfies Meta<typeof Card>;
 
@@ -30,6 +26,5 @@ export const Primary: StoryObj<CardProps> = {
   args: {
     ...Template.args,
     title: "Fideos con verdura y huevo",
-    imagePosition: "left",
   },
 };
