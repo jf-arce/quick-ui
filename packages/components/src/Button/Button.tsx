@@ -77,6 +77,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       ref={buttonRef}
       className={clsx(
+        twStyles.DEFAULT,
         {
           //add twStyles if the condition on the right is true
           "cursor-pointer": pointer,
@@ -87,7 +88,6 @@ const Button: React.FC<ButtonProps> = ({
           [twStyles.SECONDARY]: variant === VariantEnum.SECONDARY,
           [twStyles.TERTIARY]: variant === VariantEnum.TERTIARY,
         },
-        twStyles.DEFAULT,
         className,
       )}
       style={styles}

@@ -29,7 +29,7 @@ export const ButtonSize = {
 
 export const twStyles = {
   DEFAULT:
-    "inline-flex items-center gap-2 justify-center font-medium relative overflow-hidden box-border transition-all hover:!bg-opacity-50 disabled:opacity-50 disabled:pointer-events-none disabled:cursor-default",
+    "inline-flex items-center gap-2 justify-center font-medium relative overflow-hidden box-border transition-all hover:!bg-opacity-50 disabled:opacity-50 disabled:pointer-events-none disabled:cursor-default focus:outline-none",
   PRIMARY:
     "border-none bg-[var(--bg-color)] text-[var(--text-color)] hover:bg-[var(--hover-color)]",
   SECONDARY:

@@ -1,33 +1,30 @@
+import React from "react";
 import { CardProps } from "./Card.types";
-import Button from "@quick-ui/components/src/Button";
-import { CardContent } from "./CardContent";
-import { CardHeader } from "./CardHeader";
 
-const Card: React.FC<CardProps> = ({ title, image, description }) => {
+export const Card: React.FC<CardProps> = ({
+  children,
+  className,
+  style,
+  radius = "lg",
+  size,
+  ...props
+}) => {
   return (
-    <div className="w-full max-w-sm rounded-lg overflow-hidden shadow-lg transition-all hover:shadow-xl group">
-      <CardHeader className="h-52">
-        <img
-          src={image}
-          alt=""
-          loading="lazy"
-          className={`object-cover w-full h-full rounded-t-lg group-hover:scale-105 transition-transform duration-200 ease-in-out`}
-        />
-      </CardHeader>
-      <CardContent>
-        <h3 className="text-2xl font-bold">{title}</h3>
-        <p className="text-sm mt-3">{description}</p>
-        <div className="flex gap-4 border-black border-t-2 mt-5">
-          <Button variant="primary" size={"sm"} colorBg="black">
-            Add to cart
-          </Button>
-          <Button variant="primary" size={"sm"}>
-            Buy now
-          </Button>
-        </div>
-      </CardContent>
+    <div
+      {...props}
+      className={`${cardRadius[radius]} max-w-xs overflow-hidden shadow-md transition-all hover:shadow-lg group ${className}`}
+      style={style}
+    >
+      {children}
     </div>
   );
 };
 
-export default Card;
+const cardRadius = {
+  none: "rounded-none",
+  sm: "rounded-[4px]",
+  md: "rounded-[8px]",
+  lg: "rounded-[12px]",
+  xl: "rounded-[20px]",
+  full: "rounded-full",
+};

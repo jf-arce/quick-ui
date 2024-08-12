@@ -1,30 +1,31 @@
-import Card from "./Card";
-import { CardProps } from "./Card.types";
+import { CardProductsProps } from "./Card.types";
 import { Meta, StoryObj } from "@storybook/react";
+import CardProduct from "./CardProduct";
 
 export default {
-  title: "Components/Card",
-  component: Card,
+  title: "Components/CardProduct",
+  component: CardProduct,
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },
   args: {
-    title: "Card title",
-    description: "Altos fideos se mando mi vieja",
+    title: "Cookies & Creams",
+    price: "70.500",
+    description: "Cremoso helado de vainilla con trozos de galletitas oreo.",
     className: "",
-    image: "https://th.bing.com/th/id/OIP.-iKT7rZf1Fl-tPBTEEr03gHaEb?rs=1&pid=ImgDetMain",
+    image:
+      "https://s.cornershopapp.com/product-images/4497271.jpg?versionId=_VAyMOQ2nPhEKUYtPSa4Rf.mwEGtFkvu",
   },
-} satisfies Meta<typeof Card>;
+} satisfies Meta<typeof CardProduct>;
 
-const Template: StoryObj<CardProps> = {
-  render: (args) => <Card {...args} />,
+const Template: StoryObj<CardProductsProps> = {
+  render: (args) => <CardProduct {...args} />,
 };
 
-export const Primary: StoryObj<CardProps> = {
+export const Primary: StoryObj<CardProductsProps> = {
   ...Template,
   args: {
     ...Template.args,
-    title: "Fideos con verdura y huevo",
   },
 };

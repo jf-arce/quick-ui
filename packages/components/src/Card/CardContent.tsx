@@ -1,12 +1,13 @@
-interface CardContentProps {
-  children: React.ReactNode;
-  className?: string;
-  style?: React.CSSProperties;
-}
+import { CardContentProps } from "./Card.types";
 
-export const CardContent: React.FC<CardContentProps> = ({ className, children, style }) => {
+export const CardContent: React.FC<CardContentProps> = ({
+  children,
+  className,
+  style,
+  ...props
+}) => {
   return (
-    <div className={`p-6 ${className}`} style={style}>
+    <div {...props} className={className} style={style}>
       {children}
     </div>
   );
