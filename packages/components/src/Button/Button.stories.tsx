@@ -15,7 +15,7 @@ export default {
     variant: VariantEnum.PRIMARY,
     colorBg: "#a551e4",
     size: "md",
-    radius: "lg",
+    radius: "md",
     pointer: true,
     pulse: true,
     colorText: "#ffffff",
@@ -51,13 +51,9 @@ export default {
       },
     },
     radius: {
-      control: {
-        type: "select",
-        options: ["sm", "md", "lg", "xl", "full"],
-      },
       description: "Border radius of the button (sm, md, lg, xl, full)",
       table: {
-        type: { summary: "RadiusType" },
+        type: { summary: "BottonRadiusType" },
         defaultValue: { summary: "lg" },
       },
     },

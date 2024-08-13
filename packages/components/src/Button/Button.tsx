@@ -5,7 +5,8 @@
  * text color, hover effects, ripple effect, and more.
  */
 import React, { useEffect, useRef } from "react";
-import { VariantEnum, ButtonProps, ButtonRadius } from "./Button.types";
+import { VariantEnum, ButtonProps } from "./Button.types";
+import { BorderRadius } from "../types/global.types";
 import { ButtonSize, twStyles } from "./Button.constants";
 import { handleRippleEffect } from "./rippleEffect";
 import Spinner from "../Spinner";
@@ -39,7 +40,6 @@ const Button: React.FC<ButtonProps> = ({
   const styles: React.CSSProperties = {
     padding: ButtonSize[size].paddingY + " " + ButtonSize[size].paddingX,
     fontSize: ButtonSize[size].fontSize,
-    borderRadius: ButtonRadius[radius],
     ...style,
   };
 
@@ -81,6 +81,7 @@ const Button: React.FC<ButtonProps> = ({
         {
           //add twStyles if the condition on the right is true
           "cursor-pointer": pointer,
+          [BorderRadius[radius]]: radius,
           [twStyles.LOADING]: loading,
           [twStyles.ICON]: icon,
           [twStyles.PULSE_ANIMATION]: pulse && !disabled && !loading,

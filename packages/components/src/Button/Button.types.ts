@@ -1,9 +1,11 @@
+import { BorderRadiusType } from "../types/global.types";
+
 /* Props for the Button component.*/
 export interface ButtonProps {
   children?: string; // Text content of the button
   colorBg?: string | false; // Background color of the button
   size?: ButtonSizeType; // Size of the button (sm, md, lg, xl, 2xl)
-  radius?: RadiusType; // Border radius of the button
+  radius?: BorderRadiusType; // Border radius of the button
   pointer?: boolean; // Whether the button cursor should be pointer
   pulse?: boolean; // Whether to enable pulse animation on click
   colorText?: string; // Text color of the button
@@ -24,17 +26,7 @@ export interface ButtonProps {
 
 export type VariantType = "primary" | "secondary" | "tertiary";
 
-export type RadiusType = "sm" | "md" | "lg" | "xl" | "full";
-
 export type ButtonSizeType = "sm" | "md" | "lg" | "xl" | "2xl";
-
-export enum ButtonRadius {
-  "sm" = "2px",
-  "md" = "4px",
-  "lg" = "6px",
-  "xl" = "12px",
-  "full" = "100px",
-}
 
 export enum VariantEnum {
   "PRIMARY" = "primary",

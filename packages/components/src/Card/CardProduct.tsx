@@ -12,7 +12,7 @@ const CardProduct: React.FC<CardProductsProps> = ({
   description,
 }) => {
   return (
-    <Card radius="lg">
+    <Card radius="md" className="bg-white">
       <CardHeader>
         <img
           src={image}
@@ -21,13 +21,20 @@ const CardProduct: React.FC<CardProductsProps> = ({
           className={`object-cover object-center w-full group-hover:scale-105 transition-transform duration-500 ease-in-out`}
         />
       </CardHeader>
-      <CardContent className="space-y-2 p-6">
+      <CardContent className="space-y-2 p-5">
         <p className="text-lg font-thin">{title}</p>
         <p className="text-2xl font-semibold">${price}</p>
         <p className="text-sm text-neutral-500 font-medium">{description}</p>
       </CardContent>
-      <CardFooter className="p-6 pt-0 flex gap-4 border-black border-t-2">
-        <Button variant="primary" size={"sm"} className="w-full" colorBg="black" hoverOpacity={-25}>
+      <CardFooter className="p-5 pt-0 flex gap-4 border-black border-t-2">
+        <Button
+          variant="primary"
+          size={"sm"}
+          radius="md"
+          className="w-full"
+          colorBg="black"
+          hoverOpacity={-25}
+        >
           Buy now
         </Button>
       </CardFooter>

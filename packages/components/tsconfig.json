@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src", "tsup.config.ts"],
+  "include": ["src", "tsup.config.ts", "src/types", "utils"],
   "exclude": ["node_modules", "dist", "./src/**/*.stories.{ts,tsx}"]
 }
