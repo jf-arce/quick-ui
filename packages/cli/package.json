@@ -1,0 +1,21 @@
+{
+  "name": "quick-ui-cli",
+  "version": "1.0.1",
+  "description": "CLI para instalar y copiar componentes de Quick UI",
+  "bin": {
+    "quick-ui-cli": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "@types/node": "^20.11.27"
+  },
+  "type": "module"
+}

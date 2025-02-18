@@ -14,8 +14,7 @@ export default {
     price: "70.500",
     description: "Cremoso helado de vainilla con trozos de galletitas oreo.",
     className: "",
-    image:
-      "https://s.cornershopapp.com/product-images/4497271.jpg?versionId=_VAyMOQ2nPhEKUYtPSa4Rf.mwEGtFkvu",
+    image: "https://www.gastrolabweb.com/u/fotografias/m/2021/3/19/f800x450-10387_61833_5050.jpg",
   },
 } satisfies Meta<typeof CardProduct>;
 
