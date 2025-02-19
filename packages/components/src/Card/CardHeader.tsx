@@ -1,6 +1,6 @@
 import { CardHeaderProps } from "./Card.types";
 
-export const CardHeader: React.FC<CardHeaderProps> = ({ children, className, style, ...props }) => {
+const CardHeader: React.FC<CardHeaderProps> = ({ children, className, style, ...props }) => {
   return (
     <div
       {...props}
@@ -11,3 +11,5 @@ export const CardHeader: React.FC<CardHeaderProps> = ({ children, className, sty
     </div>
   );
 };
+
+export default CardHeader;

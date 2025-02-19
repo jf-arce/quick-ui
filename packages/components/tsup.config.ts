@@ -3,7 +3,7 @@ import { defineConfig } from "tsup";
 export default defineConfig({
   entry: ["src/index.ts"],
   format: ["cjs", "esm"],
-  name: "quick-ui-button",
+  name: "quick-ui-components",
   dts: true, // Para que se genere el archivo de definición de tipos
   clean: true,
   sourcemap: true,

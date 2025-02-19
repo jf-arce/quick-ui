@@ -1,6 +1,6 @@
 {
-  "name": "@quick-ui/components",
-  "version": "0.0.13",
+  "name": "quick-ui-components-temp",
+  "version": "1.0.0",
   "private": false,
   "type": "module",
   "files": [
@@ -32,7 +32,16 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
+  "description": "A set of beautiful react components for quick UI.",
+  "keywords": [
+    "quick-ui",
+    "ux/ui",
+    "react",
+    "components",
+    "design"
+  ],
+  "license": "MIT"
 }

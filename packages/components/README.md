@@ -4,21 +4,21 @@
 npm install quick-ui-components
 ```
 
+Importa los estilos en tu archivo raiz de tu proyecto.
+
+```tsx
+import "quick-ui-components/dist/index.css";
+```
+
 # Uso
 
 > Por ahora solo esta hecho el componente Button, CardProduct y Spinner pero se iran agregando mas componentes en el futuro.
 
-> Hay componentes que se pueden agregar a tu proyecto con la cli de quick-ui, como por ejemplo el componente [CardProduct](#CardProduct).
+> Para usar el componente Button, simplemente importalo y usalo en tu proyecto.
 
 # Button
 
 Este componente `Button` renderiza un botón personalizado con opciones dinámicas de estilo.
-
-Para usarlo, simplemente importalo y usalo en tu proyecto.
-
-```tsx
-import { Button } from "quick-ui-components";
-```
 
 ## Propiedades
 
@@ -89,7 +89,7 @@ Este enfoque minimiza el uso de JavaScript al mantener el estilo dinámico del b
 
 Este componente `CardProduct` renderiza una tarjeta personalizada para mostrar productos.
 
-Para usarlo usa la cli de quick-ui y agrega el componente a tu proyecto.
+Para usarlo solo usa la cli de quick-ui y agrega el componente a tu proyecto.
 
 ```bash
 npx quick-ui-cli add card-product
@@ -99,15 +99,14 @@ npx quick-ui-cli add card-product
 import { CardProduct } from "quick-ui-components";
 ```
 
-El componente se copiará en la siguiente ruta de tu proyecto:
-
-# ruta en forma de arbol
+El componente se copiara en la siguiente ruta de tu proyecto:
 
 ```
 src
 └── components
-    └── CardProduct
-        ├── CardProduct.tsx
+    └── ui
+        └── card-product
+            └── CardProduct.tsx
 ```
 
 # Spinner

@@ -1,10 +1,14 @@
 import React from "react";
-import Button from "@quick-ui/components/src/Button";
-import { CardProductsProps } from "@quick-ui/components/src/Card/Card.types";
-import { Card } from "@quick-ui/components/src/Card/Card";
-import { CardHeader } from "@quick-ui/components/src/Card/CardHeader";
-import { CardContent } from "@quick-ui/components/src/Card/CardContent";
-import { CardFooter } from "@quick-ui/components/src/Card/CardFooter";
+// @ts-ignore
+import { Button, Card, CardContent, CardHeader, CardFooter } from "quick-ui-components";
+
+interface CardProductsProps {
+  title?: string;
+  image?: string;
+  description?: string;
+  className?: string;
+  price?: string;
+}
 
 const CardProduct: React.FC<CardProductsProps> = ({
   title,

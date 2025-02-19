@@ -2,7 +2,7 @@ import React from "react";
 import { CardProps } from "./Card.types";
 import { BorderRadius } from "../types/global.types";
 
-export const Card: React.FC<CardProps> = ({
+const Card: React.FC<CardProps> = ({
   children,
   className,
   style,
@@ -20,3 +20,5 @@ export const Card: React.FC<CardProps> = ({
     </div>
   );
 };
+
+export default Card;

@@ -27,14 +27,6 @@ export interface CardFooterProps {
   style?: CSSProperties;
 }
 
-export interface CardProductsProps {
-  title?: string;
-  image?: string;
-  description?: string;
-  className?: string;
-  price?: string;
-}
-
 export enum BorderRadiusCard {
   "none" = "rounded-none",
   "xs" = "rounded-[2px]",

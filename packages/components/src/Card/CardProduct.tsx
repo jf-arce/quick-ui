@@ -1,9 +1,16 @@
-import { CardProductsProps } from "./Card.types";
 import Button from "@quick-ui/components/src/Button";
-import { CardContent } from "./CardContent";
-import { CardHeader } from "./CardHeader";
-import { CardFooter } from "./CardFooter";
-import { Card } from "./Card";
+import CardContent from "./CardContent";
+import CardHeader from "./CardHeader";
+import CardFooter from "./CardFooter";
+import Card from "./Card";
+
+interface CardProductsProps {
+  title?: string;
+  image?: string;
+  description?: string;
+  className?: string;
+  price?: string;
+}
 
 const CardProduct: React.FC<CardProductsProps> = ({
   title,
