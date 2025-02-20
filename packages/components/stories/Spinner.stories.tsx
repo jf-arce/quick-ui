@@ -1,5 +1,6 @@
-import Spinner from "./Spinner";
-import { SpinnerProps } from "./Spinner.types";
+import React from "react";
+import Spinner from "../src/Spinner";
+import { SpinnerProps } from "../src/Spinner/Spinner.types";
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {

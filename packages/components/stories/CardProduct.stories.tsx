@@ -1,5 +1,6 @@
+import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import CardProduct, { CardProductsProps } from "./CardProduct";
+import CardProduct, { CardProductsProps } from "../templates/card-product/CardProduct";
 
 export default {
   title: "Components/CardProduct",

@@ -5,7 +5,6 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/ui/HomepageFeatures";
 import Heading from "@theme/Heading";
 
-import "@quick-ui/components/styles/index.css";
 import "../css/custom.css";
 import styles from "./index.module.css";
 import { Hero } from "../components/ui/Hero/Hero";

@@ -1,16 +1,18 @@
-import Button from "../Button";
-import CardContent from "../Card/CardContent";
-import CardHeader from "../Card/CardHeader";
-import CardFooter from "../Card/CardFooter";
-import Card from "../Card/Card";
+import React from "react";
+import Button from "../../src/Button";
+import CardContent from "../../src/Card/CardContent";
+import CardHeader from "../../src/Card/CardHeader";
+import CardFooter from "../../src/Card/CardFooter";
+import Card from "../../src/Card/Card";
 
 export interface CardProductsProps {
   title?: string;
   image?: string;
+  imageAlt?: string;
   description?: string;
   price?: string;
   textButton?: string;
-  badge?: string | boolean;
+  badge?: string;
   colorBadge?: string;
   noBadge?: boolean;
 }
@@ -18,6 +20,7 @@ export interface CardProductsProps {
 const CardProduct: React.FC<CardProductsProps> = ({
   title = "Product title",
   image,
+  imageAlt,
   price = "0.00",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus sit amet euismod lorem.",
   textButton = "Buy now",
@@ -33,7 +36,7 @@ const CardProduct: React.FC<CardProductsProps> = ({
       <CardHeader className="relative overflow-hidden flex items-center justify-center">
         <img
           src={image}
-          alt=""
+          alt={imageAlt}
           loading="lazy"
           className={`h-52 w-full object-cover object-center group-hover:scale-105 transition-transform duration-300 ease-in-out`}
         />
@@ -47,7 +50,7 @@ const CardProduct: React.FC<CardProductsProps> = ({
         )}
       </CardHeader>
       <CardContent className="p-5">
-        <p className="text-lg font-medium text-black mb-2">{title}</p>
+        <p className="text-lg font-medium text-black mb-2 mt-0">{title}</p>
         <p className="text-sm text-neutral-500 font-medium m-0">{description}</p>
       </CardContent>
       <CardFooter className="flex items-center justify-between p-5 pt-0">

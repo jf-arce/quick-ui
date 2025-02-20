@@ -1,4 +1,4 @@
-import { Card, CardContent, CardFooter, CardHeader, Button } from "@quick-ui/components/src";
+import { Card, CardContent, CardFooter, CardHeader, Button } from "quick-ui-components";
 
 export interface CardProductsProps {
   title?: string;

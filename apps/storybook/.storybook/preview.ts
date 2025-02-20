@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import "@quick-ui/components/styles/index.css";
+import "../styles/index.css";
 
 const preview: Preview = {
   parameters: {

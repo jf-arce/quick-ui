@@ -15,9 +15,14 @@ export const handleRippleEffect = (
   const button = buttonRef.current;
   if (!button) return;
 
-  // Create the ripple effect
+  // Create the ripple element
   const ripple = document.createElement("span");
-  ripple.className = "animate-ripple absolute rounded-[50%] scale-0 pointer-events-none opacity-75";
+  ripple.style.position = "absolute";
+  ripple.style.borderRadius = "50%";
+  ripple.style.pointerEvents = "none";
+  ripple.style.opacity = "0.75";
+
+  // Set the background color of the ripple
   ripple.style.backgroundColor =
     variant === VariantEnum.TERTIARY
       ? colorBg
@@ -25,16 +30,37 @@ export const handleRippleEffect = (
         : colorToRgba(colorText, 0.2)
       : colorToRgba(colorText, 0.3);
 
-  // Calculate the position of the ripple effect
-  const rect = button.getBoundingClientRect(); // Get the button dimensions
-  const size = Math.max(rect.width, rect.height); // Get the size of the ripple effect
-  ripple.style.width = ripple.style.height = `${size}px`; // Set the size of the ripple effect
-  ripple.style.left = `${e.clientX - rect.left - size / 2}px`; // Set the horizontal position
-  ripple.style.top = `${e.clientY - rect.top - size / 2}px`; // Set the vertical position
+  // Set the position of the ripple
+  const rect = button.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+  ripple.style.width = ripple.style.height = `${size}px`;
+  ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+  ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
 
-  button.appendChild(ripple); // Add the ripple effect to the button
+  // Append the ripple to the button
+  button.appendChild(ripple);
 
-  // Remove the ripple effect after the animation ends
+  // Create the animation
+  ripple.style.animation = "rippleEffect 0.6s linear";
+
+  // Add the keyframes to the stylesheet
+  const styleSheet = document.styleSheets[0];
+  const keyframes = `
+    @keyframes rippleEffect {
+      0% {
+        transform: scale(0);
+        opacity: 0.75;
+      }
+      100% {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  `;
+
+  styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+
+  // Remove the ripple after the animation ends
   ripple.addEventListener("animationend", () => {
     ripple.remove();
   });

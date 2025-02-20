@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import Button from "./Button";
-import { VariantEnum, ButtonProps } from "./Button.types";
+import Button from "../src/Button/Button";
+import { VariantEnum, ButtonProps } from "../src/Button/Button.types";
 
 export default {
   title: "Components/Button",

@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@quick-ui/components": "*"
+    "quick-ui-components": "*"
   },
   "devDependencies": {
     "@quick-ui/typescript-config": "*",

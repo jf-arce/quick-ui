@@ -1,5 +1,3 @@
-import "../styles/index.css";
-
 export { default as Button } from "./Button";
 export { Card } from "./Card";
 export { CardContent } from "./Card";
