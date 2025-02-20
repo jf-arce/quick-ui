@@ -1,6 +1,6 @@
 {
   "name": "quick-ui-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI para instalar y copiar componentes de Quick UI",
   "bin": {
     "quick-ui-cli": "./index.js"
