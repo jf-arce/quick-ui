@@ -1,4 +1,10 @@
-import { CardContentProps } from "./Card.types";
+import { ReactNode, CSSProperties } from "react";
+
+export interface CardContentProps {
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
 
 const CardContent: React.FC<CardContentProps> = ({ children, className, style, ...props }) => {
   return (

@@ -1,6 +1,4 @@
-import React from "react";
-// @ts-ignore
-import { Button, Card, CardContent, CardHeader, CardFooter } from "quick-ui-components";
+import { Card, CardContent, CardFooter, CardHeader, Button } from "@quick-ui/components/src";
 
 export interface CardProductsProps {
   title?: string;

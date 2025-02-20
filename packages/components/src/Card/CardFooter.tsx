@@ -1,4 +1,10 @@
-import { CardFooterProps } from "./Card.types";
+import { ReactNode, CSSProperties } from "react";
+
+export interface CardFooterProps {
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
 
 const CardFooter: React.FC<CardFooterProps> = ({ children, className, style, ...props }) => {
   return (

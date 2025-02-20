@@ -109,6 +109,19 @@ src
             └── CardProduct.tsx
 ```
 
+## Propiedades
+
+| Propiedad   | Tipo    | Descripción                                                                                    | Valor predeterminado |
+| ----------- | ------- | ---------------------------------------------------------------------------------------------- | -------------------- |
+| title       | string  | Título del producto.                                                                           | -                    |
+| image       | string  | URL de la imagen del producto.                                                                 | -                    |
+| description | string  | Descripción del producto.                                                                      | -                    |
+| price       | string  | Precio del producto.                                                                           | -                    |
+| textButton  | string  | Texto del botón.                                                                               | -                    |
+| badge       | string  | Texto del badge, este se muestra en la esquina superior derecha de la tarjeta.                 | -                    |
+| colorBadge  | string  | Color del badge (**_El color tiene que estar en formato hexadecimal o el nombre del color_**). | `#a551e4`            |
+| noBadge     | boolean | Deshabilita el badge.                                                                          | `false`              |
+
 # Spinner
 
 Renderiza un spinner personalizado con opciones dinámicas de estilo.
@@ -121,12 +134,9 @@ import { Spinner } from "quick-ui-components";
 
 ## Propiedades
 
-| Propiedad | Tipo          | Descripción                                                                   | Valor predeterminado |
-| --------- | ------------- | ----------------------------------------------------------------------------- | -------------------- |
-| size      | string        | Tamaño del spinner: "sm", "md", "lg", "xl", "2xl".                            | `md`                 |
-| color     | string        | Color del spinner (**_El color tiene que estar en formato hexadecimal_**).    | `#a551e4`            |
-| className | string        | Clases adicionales para personalizar el spinner.                              | -                    |
-| style     | CSSProperties | Agrega stilos en linea normalmente en un objeto como cualquier elemento html. | -                    |
-| type      | string        | Tipo de spinner: "border" o "grow".                                           | `border`             |
-| border    | string        | Tamaño del borde del spinner.                                                 | `2px`                |
-| speed     | string        | Velocidad de la animación del spinner.                                        | `0.5s`               |
+| Propiedad    | Tipo   | Descripción                                                                                               | Valor predeterminado |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------- | -------------------- |
+| bgColor      | string | Color de fondo del spinner (**_El color tiene que estar en formato hexadecimal o el nombre del color_**). | `#ffffff`            |
+| spinnerColor | string | Color del spinner (**_El color tiene que estar en formato hexadecimal o el nombre del color_**).          | `#a551e4`            |
+| className    | string | Clases adicionales para personalizar el spinner.                                                          | -                    |
+| style        | object | Agrega stilos en linea normalmente en un objeto como cualquier elemento html.                             | -                    |

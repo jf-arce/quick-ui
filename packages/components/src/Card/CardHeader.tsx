@@ -1,12 +1,14 @@
-import { CardHeaderProps } from "./Card.types";
+import { ReactNode, CSSProperties } from "react";
+
+export interface CardHeaderProps {
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
 
 const CardHeader: React.FC<CardHeaderProps> = ({ children, className, style, ...props }) => {
   return (
-    <div
-      {...props}
-      className={`overflow-hidden flex items-center justify-center ${className} `}
-      style={style}
-    >
+    <div {...props} className={className} style={style}>
       {children}
     </div>
   );
