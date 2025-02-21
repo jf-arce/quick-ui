@@ -4,7 +4,7 @@
 npm install quick-ui-components
 ```
 
-> [!important] Importante  
+> [!IMPORTANT]
 > Se requiere instalar **[Tailwind CSS](https://tailwindcss.com/)** para poder hacer uso de los componentes.
 
 # Uso
