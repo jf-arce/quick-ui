@@ -7,7 +7,7 @@ import { colorToRgba } from "../../utils/colors";
 
 export const handleRippleEffect = (
   e: React.MouseEvent,
-  buttonRef: React.RefObject<HTMLButtonElement>,
+  buttonRef: React.RefObject<HTMLElement>,
   variant: VariantType,
   colorBg: string | false,
   colorText: string,

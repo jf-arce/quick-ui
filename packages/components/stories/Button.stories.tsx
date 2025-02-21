@@ -21,7 +21,7 @@ export default {
     colorText: "#ffffff",
     ripple: true,
     hoverColor: true,
-    hoverOpacity: 15,
+    hoverOpacity: 8,
     icon: null,
     loading: false,
     className: "",

@@ -16,6 +16,10 @@ export const Hero = (): JSX.Element => {
           <Link className={styles.buttonHero} href="/docs/getting-started">
             Get Started
           </Link>
+          <Button asChild variant="primary">
+            <Link href="/">Components</Link>
+          </Button>
+          <Button>Get Started</Button>
         </div>
       </div>
       <div className={styles.lines}>

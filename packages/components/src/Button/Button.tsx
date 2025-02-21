@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   colorText = "#ffffff",
   ripple = true,
   hoverColor = true,
-  hoverOpacity = 15,
+  hoverOpacity = 8,
   variant = VariantEnum.PRIMARY,
   icon = null,
   onClick,
@@ -34,6 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   loading = false,
   spinner = <Spinner bgColor="transparent" spinnerColor={colorText} />,
   iconPosition = "left",
+  asChild = false,
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -72,6 +73,57 @@ const Button: React.FC<ButtonProps> = ({
       onClick(e);
     }
   };
+
+  // if asChild is true, render the child component with the button styles
+  if (asChild) {
+    const child = React.Children.only(children as React.ReactElement);
+    const childRef = useRef<HTMLElement | null>(null);
+
+    const handleChildClick = (e: React.MouseEvent<HTMLElement>) => {
+      if (ripple && loading === false) {
+        handleRippleEffect(e, childRef, variant, colorBg, colorText);
+      }
+      if (onClick) {
+        onClick(e as React.MouseEvent<HTMLButtonElement>);
+      }
+    };
+
+    return React.cloneElement(child, {
+      ref: childRef,
+      className: clsx(
+        twStyles.DEFAULT,
+        pointer && "cursor-pointer",
+        BorderRadius[radius],
+        loading && twStyles.LOADING,
+        icon && twStyles.ICON,
+        pulse && !disabled && !loading && twStyles.PULSE_ANIMATION,
+        variant === VariantEnum.PRIMARY && twStyles.PRIMARY,
+        variant === VariantEnum.SECONDARY && twStyles.SECONDARY,
+        variant === VariantEnum.TERTIARY && twStyles.TERTIARY,
+        child.props.className,
+      ),
+      style: {
+        ...child.props.style,
+        padding: ButtonSize[size].paddingY + " " + ButtonSize[size].paddingX,
+        fontSize: ButtonSize[size].fontSize,
+        "--bg-color": colorBg || "transparent",
+        "--text-color": colorText,
+        "--hover-color":
+          hoverColor && loading === false && disabled === false
+            ? typeof hoverColor === "string"
+              ? hoverColor
+              : colorBg
+                ? darkenColor(colorBg, hoverOpacity)
+                : ""
+            : colorBg
+              ? colorBg
+              : "",
+      },
+      onClick: handleChildClick,
+      "aria-disabled": disabled || undefined,
+      tabIndex: disabled ? -1 : child.props.tabIndex,
+    });
+  }
 
   return (
     <button
