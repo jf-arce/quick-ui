@@ -1,6 +1,6 @@
 {
   "name": "quick-ui-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "type": "module",
   "files": [
@@ -11,8 +11,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "lint": "eslint . --max-warnings 0",
-    "build": "tsup",
-    "prepublishOnly": "cp ../../README.md ./README.md"
+    "build": "tsup"
   },
   "dependencies": {
     "clsx": "^2.1.1",
