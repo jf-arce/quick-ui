@@ -1,47 +1,57 @@
-# Instalacion
+<p align="center">
+  <img src="assets/images/logo-read-me.png" />
+</p>
+
+<p align="center">
+  A library of reusable and highly customizable React components, <br/>
+  built with TypeScript and styled with Tailwind CSS.
+</p>
+<br/>
+
+# Installation
 
 ```bash
 npm install quick-ui-components
 ```
 
 > [!IMPORTANT]
-> Se requiere instalar **[Tailwind CSS](https://tailwindcss.com/)** para poder hacer uso de los componentes.
+> You need to install **[Tailwind CSS](https://tailwindcss.com/)** to use the components.
 
-# Uso
+# Usage
 
-> Por ahora solo esta hecho el componente Button, CardProduct y Spinner pero se iran agregando mas componentes en el futuro.
+> For now, only the Button, Card Product, and Spinner components are made, but more components will be added in the future.
 
-> Para usar el componente Button, simplemente importalo y usalo en tu proyecto.
+> To use the Button component, simply import it and use it in your project.
 
 # Button
 
-Este componente `Button` renderiza un botón personalizado con opciones dinámicas de estilo.
+This `Button` component renders a custom button with dynamic styling options.
 
-## Propiedades
+## Properties
 
-| Propiedad   | Tipo              | Descripción                                                                                                                                                                                                                                                        | Valor predeterminado |
-| ----------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
-| colorBg     | string            | Color de fondo del botón (**_El color tiene que estar en formato hexadecimal_**). Setearlo en `{false}` para eliminar el fondo.                                                                                                                                    | `#a551e4`            |
-| size        | string            | Tamaño del botón: "sm", "md", "lg", "xl", "2xl".                                                                                                                                                                                                                   | `sm`                 |
-| radius      | string            | Tipo de radio de borde del botón.                                                                                                                                                                                                                                  | `lg`                 |
-| className   | string            | Clases adicionales para personalizar el botón.                                                                                                                                                                                                                     | -                    |
-| pointer     | boolean           | Habilitar o deshabilitar cursor tipo puntero.                                                                                                                                                                                                                      | `true`               |
-| pulse       | boolean           | Habilitar o deshabilitar animación de pulso al clickear el botón.                                                                                                                                                                                                  | `true`               |
-| colorText   | string            | Color del texto del botón.                                                                                                                                                                                                                                         | `#ffffff`            |
-| ripple      | boolean           | Habilitar o deshabilitar "ripple-effect" al clickear el botón.                                                                                                                                                                                                     | `true`               |
-| hoverColor  | string or boolean | Color de fondo al hacer hover. Se le puede pasar un color como string (en cualquier formato, nombre, hexa, rgb, etc) o setearlo en `true` para que automáticamente se oscuresca según el `colorBg` que este actualmente. Si no queremos hover setearlo en `false`. | `true`               |
-| hoverDarken | number            | Porcentaje de oscurecimiento al hacer hover. (Si se le da numeros negativos se aclara)                                                                                                                                                                             | `8`                  |
-| btnType     | string            | Tipo de botón: primary, secondaty or tertiary                                                                                                                                                                                                                      | `primary`            |
-| icon        | ReactNode         | Icono para mostrar en el botón. Si se proporciona, el botón mostrará el icono en lugar de texto.                                                                                                                                                                   | `null`               |
-| children    | string            | Agrega contenido de texto al botón                                                                                                                                                                                                                                 | `null`               |
-| style       | CSSProperties     | Agrega stilos en linea normalmente en un objeto como cualquier elemento html                                                                                                                                                                                       | -                    |
-| disable     | boolean           | Deshabilita el botón                                                                                                                                                                                                                                               | `false`              |
-| type        | string            | Tipo de botón: submit, reset, button                                                                                                                                                                                                                               | `button`             |
+| Property    | Type              | Description                                                                                                                                                                                                                   | Default Value |
+| ----------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| colorBg     | string            | Button background color (**_The color must be in hexadecimal format_**). Set it to `{false}` to remove the background.                                                                                                        | `#a551e4`     |
+| size        | string            | Button size: "sm", "md", "lg", "xl", "2xl".                                                                                                                                                                                   | `sm`          |
+| radius      | string            | Button border radius type.                                                                                                                                                                                                    | `lg`          |
+| className   | string            | Additional classes to customize the button.                                                                                                                                                                                   | -             |
+| pointer     | boolean           | Enable or disable pointer cursor.                                                                                                                                                                                             | `true`        |
+| pulse       | boolean           | Enable or disable pulse animation when clicking the button.                                                                                                                                                                   | `true`        |
+| colorText   | string            | Button text color.                                                                                                                                                                                                            | `#ffffff`     |
+| ripple      | boolean           | Enable or disable "ripple-effect" when clicking the button.                                                                                                                                                                   | `true`        |
+| hoverColor  | string or boolean | Background color on hover. You can pass a color as a string (in any format, name, hex, rgb, etc.) or set it to `true` to automatically darken according to the current `colorBg`. If you don't want hover, set it to `false`. | `true`        |
+| hoverDarken | number            | Darkening percentage on hover. (If you give negative numbers it will lighten)                                                                                                                                                 | `8`           |
+| btnType     | string            | Button type: primary, secondary, or tertiary                                                                                                                                                                                  | `primary`     |
+| icon        | ReactNode         | Icon to display on the button. If provided, the button will display the icon instead of text.                                                                                                                                 | `null`        |
+| children    | string            | Add text content to the button                                                                                                                                                                                                | `null`        |
+| style       | CSSProperties     | Add inline styles normally in an object like any HTML element                                                                                                                                                                 | -             |
+| disable     | boolean           | Disable the button                                                                                                                                                                                                            | `false`       |
+| type        | string            | Button type: submit, reset, button                                                                                                                                                                                            | `button`      |
 
-> Si quisieramos agregar un icono con texto, podriamos combinar el uso de `icon` y `children` para lograrlo.
-> De igual manera, si quisieramos agregar un icono sin texto, simplemente seteamos `icon` y no le pasamos nada al `children`.
+> If we wanted to add an icon with text, we could combine the use of `icon` and `children` to achieve it.
+> Similarly, if we wanted to add an icon without text, we simply set `icon` and do not pass anything to `children`.
 
-## Ejemplo de uso
+## Example
 
 ```tsx
 import { Button } from "quick-ui-components";
@@ -70,9 +80,9 @@ const App = () => {
 };
 ```
 
-## Efecto de Hover Optimizado
+## Hover Effect
 
-El efecto de oscurecimiento al hacer hover en el botón se implementó de manera eficiente utilizando CSS. Al cargar el componente, se establece el color de fondo inicial y se calcula el color de hover una sola vez. Esto se logra mediante variables CSS personalizadas (--bg-color y --hover-color), asegurando una transición suave y optimizada al interactuar con el botón.
+The darkening hover effect on the button was efficiently implemented using CSS. When the component loads, the initial background color is set, and the hover color is calculated only once. This is achieved through custom CSS variables (--bg-color and --hover-color), ensuring a smooth and optimized transition when interacting with the button.
 
 ```css
 .hover\:bg-hover-custom:hover {
@@ -80,13 +90,13 @@ El efecto de oscurecimiento al hacer hover en el botón se implementó de manera
 }
 ```
 
-Este enfoque minimiza el uso de JavaScript al mantener el estilo dinámico del botón exclusivamente con CSS, mejorando el rendimiento general de la aplicación.
+This approach minimizes the use of JavaScript by keeping the button's dynamic styling exclusively with CSS, improving the overall performance of the application.
 
 # CardProduct
 
-Este componente `CardProduct` renderiza una tarjeta personalizada para mostrar productos.
+This `CardProduct` component renders a custom card to display products.
 
-Para usarlo solo usa la cli de quick-ui y agrega el componente a tu proyecto.
+To use it, simply use the quick-ui CLI and add the component to your project.
 
 ```bash
 npx quick-ui-cli add card-product
@@ -96,7 +106,7 @@ npx quick-ui-cli add card-product
 import { CardProduct } from "quick-ui-components";
 ```
 
-El componente se copiara en la siguiente ruta de tu proyecto:
+The component will be copied to the following path in your project:
 
 ```
 src
@@ -106,34 +116,34 @@ src
             └── CardProduct.tsx
 ```
 
-## Propiedades
+## Properties
 
-| Propiedad   | Tipo    | Descripción                                                                                    | Valor predeterminado |
-| ----------- | ------- | ---------------------------------------------------------------------------------------------- | -------------------- |
-| title       | string  | Título del producto.                                                                           | -                    |
-| image       | string  | URL de la imagen del producto.                                                                 | -                    |
-| description | string  | Descripción del producto.                                                                      | -                    |
-| price       | string  | Precio del producto.                                                                           | -                    |
-| textButton  | string  | Texto del botón.                                                                               | -                    |
-| badge       | string  | Texto del badge, este se muestra en la esquina superior derecha de la tarjeta.                 | -                    |
-| colorBadge  | string  | Color del badge (**_El color tiene que estar en formato hexadecimal o el nombre del color_**). | `#a551e4`            |
-| noBadge     | boolean | Deshabilita el badge.                                                                          | `false`              |
+| Property    | Type    | Description                                                                    | Default Value |
+| ----------- | ------- | ------------------------------------------------------------------------------ | ------------- |
+| title       | string  | Product title.                                                                 | -             |
+| image       | string  | Product image URL.                                                             | -             |
+| description | string  | Product description.                                                           | -             |
+| price       | string  | Product price.                                                                 | -             |
+| textButton  | string  | Button text.                                                                   | -             |
+| badge       | string  | Badge text, displayed in the top right corner of the card.                     | -             |
+| colorBadge  | string  | Badge color (**_The color must be in hexadecimal format or the color name_**). | `#a551e4`     |
+| noBadge     | boolean | Disable the badge.                                                             | `false`       |
 
 # Spinner
 
-Renderiza un spinner personalizado con opciones dinámicas de estilo.
+Renders a custom spinner with dynamic styling options.
 
-Para usarlo importalo y usalo en tu proyecto.
+To use it, import it and use it in your project.
 
 ```tsx
 import { Spinner } from "quick-ui-components";
 ```
 
-## Propiedades
+## Properties
 
-| Propiedad    | Tipo   | Descripción                                                                                               | Valor predeterminado |
-| ------------ | ------ | --------------------------------------------------------------------------------------------------------- | -------------------- |
-| bgColor      | string | Color de fondo del spinner (**_El color tiene que estar en formato hexadecimal o el nombre del color_**). | `#ffffff`            |
-| spinnerColor | string | Color del spinner (**_El color tiene que estar en formato hexadecimal o el nombre del color_**).          | `#a551e4`            |
-| className    | string | Clases adicionales para personalizar el spinner.                                                          | -                    |
-| style        | object | Agrega stilos en linea normalmente en un objeto como cualquier elemento html.                             | -                    |
+| Property     | Type   | Description                                                                                 | Default Value |
+| ------------ | ------ | ------------------------------------------------------------------------------------------- | ------------- |
+| bgColor      | string | Spinner background color (**_The color must be in hexadecimal format or the color name_**). | `#ffffff`     |
+| spinnerColor | string | Spinner color (**_The color must be in hexadecimal format or the color name_**).            | `#a551e4`     |
+| className    | string | Additional classes to customize the spinner.                                                | -             |
+| style        | object | Add inline styles normally in an object like any HTML element.                              | -             |
