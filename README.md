@@ -4,12 +4,6 @@
 npm install quick-ui-components
 ```
 
-Importa los estilos en tu archivo raiz de tu proyecto.
-
-```tsx
-import "quick-ui-components/dist/index.css";
-```
-
 # Uso
 
 > Por ahora solo esta hecho el componente Button, CardProduct y Spinner pero se iran agregando mas componentes en el futuro.
