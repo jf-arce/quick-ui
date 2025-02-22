@@ -14,8 +14,33 @@
 npm install quick-ui-components
 ```
 
-> [!IMPORTANT]
-> You need to install **[Tailwind CSS](https://tailwindcss.com/)** to use the components.
+> ⚠️ **IMPORTANT**: You need to install **[Tailwind CSS](https://tailwindcss.com/)** to use the components.
+
+## Configure Tailwind
+
+To ensure Tailwind CSS recognizes the styles from Quick UI Components, follow the instructions based on the version of Tailwind you are using.
+
+> For both cases, make sure the path to the Quick UI Components files is correct.
+
+### Tailwind v4
+
+Add the following to the `CSS file` where you import Tailwind:
+
+```css
+@import "tailwindcss";
+@source "../node_modules/quick-ui-components/dist";
+```
+
+### Tailwind v3
+
+Add the following to the `tailwind.config.js` file in the `content` property:
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./node_modules/quick-ui-components/dist/*.js"],
+};
+```
 
 # Usage
 
